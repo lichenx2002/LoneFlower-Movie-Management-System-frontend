@@ -1,0 +1,195 @@
+.order-confirm {
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 40px 20px;
+}
+
+.order-confirm h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.order-info {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.movie-info {
+  margin-bottom: 40px;
+}
+
+.movie-info h3,
+.seat-info h3,
+.price-info h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.movie-info h3::before,
+.seat-info h3::before,
+.price-info h3::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 16px;
+  background: #0daef6;
+  margin-right: 8px;
+  border-radius: 2px;
+}
+
+.movie-info p,
+.seat-info p,
+.price-info p {
+  margin: 12px 0;
+  font-size: 15px;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+.movie-info p span,
+.seat-info p span,
+.price-info p span {
+  color: #333;
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+.seat-info {
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #eee;
+}
+
+.seat-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.seat-tag {
+  background: #f5f7fa;
+  color: #0daef6;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: 1px solid #e8f0f8;
+  font-weight: 500;
+}
+
+.price-info {
+  margin-bottom: 40px;
+}
+
+.price-info .total {
+  font-size: 20px;
+  color: #333;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.price-info .total span {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ff4757;
+}
+
+.order-actions {
+  max-width: 800px;
+  margin: 30px auto 0;
+  padding: 0 20px;
+}
+
+.pay-button {
+  width: 100%;
+  padding: 16px;
+  background: #0daef6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pay-button:hover {
+  background: #0b8dc4;
+  transform: translateY(-1px);
+}
+
+.pay-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 15px;
+}
+
+.error {
+  text-align: center;
+  padding: 16px;
+  color: #ff4757;
+  background: #fff2f0;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 800px;
+  border: 1px solid #ffccc7;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .order-confirm {
+    padding: 20px 15px;
+  }
+
+  .order-info {
+    padding: 20px;
+  }
+
+  .movie-info h3,
+  .seat-info h3,
+  .price-info h3 {
+    font-size: 18px;
+  }
+
+  .movie-info p,
+  .seat-info p,
+  .price-info p {
+    font-size: 14px;
+  }
+
+  .price-info .total {
+    font-size: 20px;
+  }
+
+  .price-info .total span {
+    font-size: 24px;
+  }
+
+  .pay-button {
+    padding: 14px;
+    font-size: 16px;
+  }
+}

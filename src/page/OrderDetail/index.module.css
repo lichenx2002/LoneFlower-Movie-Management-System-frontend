@@ -1,0 +1,59 @@
+.order-detail {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-detail h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.order-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.movie-info,
+.seat-info,
+.price-info,
+.user-info {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+}
+
+.movie-info h3,
+.seat-info h3,
+.price-info h3,
+.user-info h3 {
+  color: #333;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.movie-info p,
+.seat-info p,
+.price-info p,
+.user-info p {
+  margin: 8px 0;
+  color: #666;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+.error {
+  text-align: center;
+  padding: 20px;
+  color: #dc3545;
+}

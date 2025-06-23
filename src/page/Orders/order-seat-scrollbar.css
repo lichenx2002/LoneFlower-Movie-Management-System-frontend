@@ -1,0 +1,23 @@
+.order-seat-scroll {
+    scrollbar-width: none; /* Firefox */
+}
+.order-seat-scroll::-webkit-scrollbar {
+    height: 6px;
+    background: transparent;
+    transition: background 0.2s;
+}
+.order-seat-scroll:hover::-webkit-scrollbar {
+    background: #e6eaf0;
+}
+.order-seat-scroll::-webkit-scrollbar-thumb {
+    background: #bfc8d6;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.order-seat-scroll:hover::-webkit-scrollbar-thumb {
+    opacity: 1;
+}
+.order-seat-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}

@@ -1,0 +1,134 @@
+.auth-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.22);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.auth-box {
+  background: white;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 400px; /* 新增 */
+  width: auto; /* 修改 */
+  padding: 30px 40px; /* 调整 */
+}
+
+.auth-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+  padding: 5px;
+  line-height: 1;
+}
+
+.auth-close-btn:hover {
+  color: #333;
+}
+
+.auth-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 24px;
+  font-size: 24px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.auth-input {
+  width: 100%;
+  min-width: 100%; /* 新增 */
+  box-sizing: border-box; /* 确保已存在 */
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.3s;
+  background-color: white !important;
+  background-image: none !important;
+}
+
+.auth-input:focus {
+  border-color: #0daef6;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(13, 174, 246, 0.1);
+}
+
+.auth-input::placeholder {
+  color: #999;
+}
+
+.auth-error {
+  color: #ff4757;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.auth-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.auth-footer-text {
+  color: #666;
+  font-size: 14px;
+}
+
+.auth-link-btn {
+  background: none;
+  border: none;
+  color: #0daef6;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.auth-link-btn:hover {
+  color: #0b8dc4;
+  text-decoration: underline;
+}
+
+.auth-submit-btn {
+  background-color: #0daef6;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 8px;
+}
+
+.auth-submit-btn:hover {
+  background-color: #0b8dc4;
+}
+
+.auth-submit-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
