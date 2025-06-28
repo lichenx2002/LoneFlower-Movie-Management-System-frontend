@@ -1,0 +1,38 @@
+/* App.css */
+.auth-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+body {
+    overflow: auto !important;
+}
+
+/* 如果有其他全屏元素，确保不会覆盖模态框 */
+.App {
+    position: relative;
+    z-index: 1;
+}
+
+input[type="text"],
+input[type="password"] {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}

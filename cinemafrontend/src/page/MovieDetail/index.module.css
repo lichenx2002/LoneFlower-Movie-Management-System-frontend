@@ -1,0 +1,497 @@
+/* index.css */
+
+/* 基础样式 */
+:root {
+    --primary-color: #0daef6;
+    --secondary-color: #f5f5f5;
+    --text-color: #333;
+    --text-light: #666;
+    --border-color: #e0e0e0;
+    --rating-color: #ffb400;
+    --box-office-color: #ff4757;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: var(--text-color);
+}
+
+/* 加载状态 */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-text {
+    font-size: 18px;
+    color: var(--text-light);
+}
+
+.error-message,
+.no-data {
+    text-align: center;
+    padding: 50px;
+    font-size: 18px;
+    color: #ff4757;
+}
+
+/* 主容器 */
+.movie-detail-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+/* 顶部区域 */
+.movie-detail-top {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(135deg, var(--primary-color), #1e88e5);
+    position: relative;
+}
+
+.movie-detail-top-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* 电影海报 */
+.movie-post {
+    height: 340px;
+    width: 240px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.poster-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.poster-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.movie-post:hover .poster-overlay {
+    opacity: 1;
+}
+
+.movie-post:hover .poster-image {
+    transform: scale(1.05);
+}
+
+.play-trailer-btn {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.play-trailer-btn:hover {
+    background-color: #fff;
+    transform: translateY(-2px);
+}
+
+.icon-play {
+    margin-right: 5px;
+}
+
+/* 电影信息 */
+.movie-message {
+    height: 100%;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+    color: white;
+}
+
+.movie-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.movie-english-title {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.movie-meta {
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    margin-right: 20px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.icon-time,
+.icon-calendar,
+.icon-user {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.meta-buttons {
+    margin-top: 30px;
+}
+
+/* 评分区域 */
+.movie-rating {
+    height: 100%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: white;
+}
+
+.rating-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 180px;
+}
+
+.rating-score {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--rating-color);
+}
+
+.rating-text {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.rating-stars {
+    display: flex;
+    justify-content: center;
+}
+
+.icon-star {
+    color: #ccc;
+    margin: 0 2px;
+}
+
+.icon-star.filled {
+    color: var(--rating-color);
+}
+
+.box-office {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 180px;
+}
+
+.box-office-text {
+    font-size: 14px;
+}
+
+.box-office-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-top: 5px;
+}
+
+/* 中部内容区域 */
+.movie-detail-center-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+}
+
+.movie-detail-left {
+    flex: 1;
+    margin-right: 40px;
+}
+
+.movie-detail-right {
+    width: 350px;
+}
+
+.movie-detail-message {
+    margin-bottom: 40px;
+}
+
+.movie-detail-header {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    height: auto;
+    line-height: 1;
+}
+
+.movie-description {
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+/* 演员列表 */
+.actors-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.actor-tag {
+    background-color: var(--secondary-color);
+    padding: 5px 12px;
+    border-radius: 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+/* 剧照 */
+.movie-stills {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px;
+}
+
+.still-item {
+    width: calc(25% - 10px);
+    margin: 5px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.still-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.still-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+/* 预告片区域 */
+.trailer-container {
+    margin-top: 15px;
+}
+
+.trailer-video-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.trailer-video-placeholder:hover {
+    background-color: #e0e0e0;
+}
+
+.icon-play-circle {
+    font-size: 50px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.trailer-video-placeholder p {
+    color: var(--text-light);
+}
+
+/* 推荐电影 */
+.recommend-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.recommend-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.recommend-item:hover {
+    background-color: #f8f9fa;
+    border-color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.recommend-item:last-child {
+    margin-bottom: 0;
+}
+
+.recommend-image {
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.recommend-item:hover .recommend-image {
+    transform: scale(1.05);
+}
+
+.recommend-title {
+    font-size: 14px;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+    flex: 1;
+}
+
+.recommend-item:hover .recommend-title {
+    color: var(--primary-color);
+}
+
+/* 空状态 */
+.no-recommendations {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--text-light);
+}
+
+.no-recommendations p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+    .movie-detail-top-container {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .movie-post {
+        margin: 0 auto 20px;
+    }
+
+    .movie-message,
+    .movie-rating {
+        width: 100%;
+        text-align: center;
+    }
+
+    .movie-meta {
+        justify-content: center;
+    }
+
+    .book-button {
+        margin: 20px auto;
+    }
+
+    .movie-rating {
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .movie-detail-center-container {
+        flex-direction: column;
+    }
+
+    .movie-detail-left {
+        margin-right: 0;
+    }
+
+    .movie-detail-right {
+        width: 100%;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .movie-post {
+        width: 200px;
+        height: 280px;
+    }
+
+    .movie-title {
+        font-size: 24px;
+    }
+
+    .still-item {
+        width: calc(50% - 10px);
+    }
+}
