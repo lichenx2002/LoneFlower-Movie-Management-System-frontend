@@ -9,6 +9,7 @@ export const login = (loginId: string, password: string) => {
 
             const response = await userAuthAPI.login(loginId, password);
 
+
             dispatch(loginSuccess(response.user, response.token));
 
             // Store the token in localStorage for persistence

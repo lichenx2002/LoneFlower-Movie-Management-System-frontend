@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../redux/userAuth/thunks';
 import { RootState, AppDispatch } from '../../redux/store';
-import { useAuth } from '../../context/AuthContext'; // 导入useAuth
 // @ts-ignore
 import styles from './index.module.css';
-import { Alert, message } from 'antd';
+import { message } from 'antd';
 
 interface LoginProps {
     onClose: () => void;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { navRoutes } from '../../routes/nav-routes';
 import Search from "antd/es/input/Search";
 import { UserOutlined, LogoutOutlined, IdcardOutlined } from '@ant-design/icons';
@@ -130,10 +130,10 @@ const Navbar: React.FC = () => {
                         .filter((navRoutes) => navRoutes.id <= 4)
                         .map((route) => (
                             <li key={route.path} >
-                                <Link
-                                    className={styles.navLinksItem}
+                                <NavLink
+                                    className={({ isActive }) => isActive ? styles['navLinksItem-active'] : styles.navLinksItem}
                                     to={route.path}
-                                >{route.name}</Link>
+                                >{route.name}</NavLink>
                             </li>
                         ))}
                 </ul>
@@ -168,4 +168,3 @@ const Navbar: React.FC = () => {
     );
 };
 
-export default Navbar;

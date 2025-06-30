@@ -2,9 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { thunk } from 'redux-thunk';
 import type { ThunkDispatch } from 'redux-thunk';
 import authReducer from './userAuth/reducer';
-import { LoginState } from '../types/user';
 import adminAuthReducer from "./adminAuth/reducer";
-import { AdminLoginState } from '../types/admin';
 
 const rootReducer = combineReducers({
     auth: authReducer,

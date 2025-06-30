@@ -1,4 +1,4 @@
-import { ADMIN_LOGIN_REQUEST, ADMIN_LOGIN_SUCCESS, ADMIN_LOGIN_FAILURE, ADMIN_LOGOUT, ADMIN_CLEAR_ERROR } from './type';
+import  { ADMIN_LOGIN_REQUEST, ADMIN_LOGIN_SUCCESS, ADMIN_LOGIN_FAILURE, ADMIN_LOGOUT, ADMIN_CLEAR_ERROR } from './type';
 import { Admin } from '../../types/admin';
 
 export const adminLoginRequest = () => ({
